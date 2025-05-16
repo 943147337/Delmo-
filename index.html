@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DecoraEventos - Decoração de Eventos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      color: #333;
+    }
+    header {
+      background: url('https://via.placeholder.com/1600x600') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+    header p {
+      font-size: 1.2em;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.5em;
+      cursor: pointer;
+      background: #f5f5f5;
+      padding: 10px;
+      border: none;
+      width: 100%;
+      text-align: left;
+    }
+    nav {
+      background: #f5f5f5;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #d67b00;
+    }
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+      }
+      nav.active {
+        display: flex;
+      }
+      nav a {
+        margin: 10px 0;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .galeria img {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+    .servico {
+      background: #fdf6f0;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+    form input, form textarea {
+      width: 100%;
+      max-width: 500px;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+    form button {
+      padding: 10px 20px;
+      background-color: #d67b00;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #b06200;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50px;
+      font-size: 20px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DecoraEventos</h1>
+    <p>Transformamos sonhos em realidade com decorações incríveis</p>
+  </header>
+  <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#portfolio">Portfólio</a>
+    <a href="#depoimentos">Depoimentos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>Somos apaixonados por transformar ambientes em experiências memoráveis. Desde 2010, decoramos eventos com elegância, criatividade e atenção a cada detalhe.</p>
+  </section>
+  <section id="servicos">
+    <h2>Serviços</h2>
+    <div class="servico"><strong>Casamentos:</strong> Cerimônias inesquecíveis com beleza e sofisticação.</div>
+    <div class="servico"><strong>Aniversários:</strong> Decorações temáticas para todas as idades.</div>
+    <div class="servico"><strong>Eventos Corporativos:</strong> Ambientes profissionais e elegantes.</div>
+    <div class="servico"><strong>Chá Revelação / Batizados:</strong> Emoções decoradas com carinho.</div>
+  </section>
+  <section id="portfolio">
+    <h2>Portfólio</h2>
+    <div class="galeria">
+      <img src="https://via.placeholder.com/300" alt="Decoração de casamento elegante com flores brancas" />
+      <img src="https://via.placeholder.com/300" alt="Aniversário temático infantil com balões coloridos" />
+      <img src="https://via.placeholder.com/300" alt="Evento corporativo com decoração moderna" />
+    </div>
+  </section>
+  <section id="depoimentos">
+    <h2>Depoimentos</h2>
+    <p>"Fiquei encantada com o cuidado em cada detalhe. Superaram todas as minhas expectativas!" – Ana Paula</p>
+    <p>"Profissionais incríveis, criativos e pontuais. Recomendo muito!" – João Carlos</p>
+  </section>
+  <section id="contato">
+    <h2>Contato</h2>
+    <form action="mailto:contato@decoraeventos.com.br" method="post" enctype="text/plain">
+      <label for="nome">Nome:</label><br>
+      <input type="text" id="nome" name="nome" required><br>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br>
+      <label for="mensagem">Mensagem:</label><br>
+      <textarea id="mensagem" name="mensagem" rows="5" required></textarea><br>
+      <button type="submit">Enviar</button>
+    </form>
+    <p>Ou fale conosco pelo WhatsApp ou Instagram.</p>
+    <p>Email: contato@decoraeventos.com.br</p>
+    <p>Instagram: @decoraeventos</p>
+  </section>
+  <a class="whatsapp" href="https://wa.me/5511999999999" target="_blank" aria-label="Contato via WhatsApp">WhatsApp</a>
+  <footer>
+    <p>&copy; 2025 DecoraEventos. Todos os direitos reservados.</p>
+  </footer>
+  <script>
+    function toggleMenu() {
+      document.querySelector('nav').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
